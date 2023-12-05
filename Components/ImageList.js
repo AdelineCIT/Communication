@@ -32,7 +32,34 @@ const ImageList = () => {
     require("../Images/Water.png"),
     require("../Images/Yes.png"),
   ]);
-  const [names, setnames] = useState(["Banana", "carrot"]);
+  const [names, setnames] = useState([
+    "Banana",
+    "carrot",
+    "Chicken and Rice",
+    "Chocolate Milk",
+    "Food",
+    "Fries",
+    "Fruit Snacks",
+    "Juice",
+    "No",
+    "Phone",
+    "Play Toys",
+    "Please",
+    "Popcorn",
+    "Pretzels",
+    "Ruffles",
+    "Spaghetti",
+    "Strawberry Milk",
+    "String Cheese",
+    "Thank you",
+    "Toilet",
+    "Tortilla Chips",
+    "Tortilla Chips",
+    "Wash Hands",
+    "Watch TV",
+    "Water",
+    "Yes",
+  ]);
   const handleImagePress = (index) => {
     console.log(`Image at index ${index} pressed`);
     Speech.speak(names[index]);
