@@ -1,22 +1,29 @@
 import React, { useState } from "react";
-import { View, Image as RNImage, FlatList } from "react-native";
-import ImagePressHandler from "./ImagePressHandler";
+import {
+  StyleSheet,
+  SafeAreaView,
+  Image as RNImage,
+  FlatList,
+} from "react-native";
 import * as Speech from "expo-speech";
+import ImagePressHandler from "./ImagePressHandler";
 
 const ImageList = () => {
   const [images, setimages] = useState([
+    require("../Images/Food.png"),
+    require("../Images/Phone.png"),
+    require("../Images/Watch TV.png"),
+    require("../Images/Yes.png"),
+    require("../Images/No.png"),
+    require("../Images/ChocolateMilk.png"),
+    require("../Images/Please.png"),
     require("../Images/Banana.png"),
     require("../Images/carrot.png"),
     require("../Images/ChickenRice.png"),
-    require("../Images/ChocolateMilk.png"),
-    require("../Images/Food.png"),
     require("../Images/Fries.png"),
     require("../Images/Fruit Snacks.png"),
     require("../Images/Juice.png"),
-    require("../Images/No.png"),
-    require("../Images/Phone.png"),
     require("../Images/Play Toys.png"),
-    require("../Images/Please.png"),
     require("../Images/Popcorn.png"),
     require("../Images/Pretzels.png"),
     require("../Images/Ruffles.png"),
@@ -28,23 +35,24 @@ const ImageList = () => {
     require("../Images/Tortilla chips 2.png"),
     require("../Images/Tortilla chips.png"),
     require("../Images/Wash Hands.png"),
-    require("../Images/Watch TV.png"),
     require("../Images/Water.png"),
-    require("../Images/Yes.png"),
   ]);
+
   const [names, setnames] = useState([
+    "Food",
+    "Phone",
+    "Watch TV",
+    "Yes",
+    "No",
+    "Chocolate Milk",
+    "Please",
     "Banana",
     "carrot",
     "Chicken and Rice",
-    "Chocolate Milk",
-    "Food",
     "Fries",
     "Fruit Snacks",
     "Juice",
-    "No",
-    "Phone",
     "Play Toys",
-    "Please",
     "Popcorn",
     "Pretzels",
     "Ruffles",
@@ -56,9 +64,7 @@ const ImageList = () => {
     "Tortilla Chips",
     "Tortilla Chips",
     "Wash Hands",
-    "Watch TV",
     "Water",
-    "Yes",
   ]);
   const handleImagePress = (index) => {
     console.log(`Image at index ${index} pressed`);
@@ -66,7 +72,7 @@ const ImageList = () => {
   };
 
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <FlatList
         horizontal={false}
         showsHorizontalScrollIndicator={false}
@@ -88,7 +94,14 @@ const ImageList = () => {
         )}
         keyExtractor={(item, index) => index.toString()}
       />
-    </View>
+    </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // Other styles for container view not sure what I want
+  },
+});
+
 export default ImageList;
